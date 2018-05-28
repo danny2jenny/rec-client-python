@@ -1,0 +1,5 @@
+
+/__pycache__
+/pyinstaller/__pycache__
+/pyinstaller/build
+/pyinstaller/dist
