@@ -4,9 +4,24 @@ nvrs 存放所有的NVR配置
 '''
 
 import json
+import threading
 
-import wx
 import video
+
+'''
+线程定时器
+'''
+
+
+class ThreadTimer(threading.Thread):
+    def __init__(self, event, func):
+        threading.Thread.__init__(self)
+        self.stopped = event
+        self.func = func
+
+    def run(self):
+        while not self.stopped.wait(1):
+            self.func()
 
 
 class VideoManager:
@@ -17,22 +32,21 @@ class VideoManager:
         self.app = app  # wx App 对象
         self.nvrs = dict()  # nvr 列表
 
-        # 定时器初始化
-        self.timer_id = -1
-        self.timer = wx.Timer(app)
-        app.Bind(wx.EVT_TIMER, self.on_timer, self.timer)
-        self.timer.Start(1000)
+        self.stopFlag = threading.Event()
+        thread = ThreadTimer(self.stopFlag, self.on_timer)
+        thread.start()
 
     # 析构函数
     def __del__(self):
         pass
 
     def clearUp(self):
-        self.timer.Stop()
+        self.stopFlag.set()
         video.CleanDlls()
 
     # 定时执行函数，用于检测NVR的登录情况，每秒执行
-    def on_timer(self, _):
+    def on_timer(self):
+        print("Timer ....")
         for k in self.nvrs:
             nvr = self.nvrs[k]
             if nvr.session <= 0:
@@ -83,4 +97,3 @@ class VideoManager:
     # 历史回放
     def playBack(self, channel, device, name):
         print("历史回放，未实现！")
-        pass

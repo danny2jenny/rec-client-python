@@ -16,6 +16,7 @@ import json
 
 # Fix for PyCharm hints warnings when using static methods
 import video
+from video.RealPlayer import RealPlayerForm
 from video.VideoManager import VideoManager
 
 WindowUtils = cef.WindowUtils()

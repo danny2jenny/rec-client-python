@@ -37,7 +37,14 @@ class RealPlayerForm(wx.Frame):
         self.session = -1
         self.channel = -1
 
-        wx.Frame.__init__(self, parent=parent, id=wx.ID_ANY, title=title, size=(600, 400))
+        wx.Frame.__init__(
+            self,
+            parent=parent,
+            id=wx.ID_ANY,
+            title=title,
+            size=(600, 400),
+            style=wx.FRAME_FLOAT_ON_PARENT | wx.DEFAULT_FRAME_STYLE
+        )
         # 类变量
         self.ptzDir = PtzDir.DOWN
 
