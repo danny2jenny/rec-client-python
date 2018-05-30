@@ -58,7 +58,6 @@ class NvrDH(NvrBase):
             cha - 1,
             vf.GetHandle()
         )
-        print("大华实时Session：", vf.session)
 
     # 实时播放停止
     def real_play_stop(self, session):
@@ -97,7 +96,6 @@ class NvrDH(NvrBase):
         elif direction == PtzDir.UP_LEFT:
             dcode = 32
         self.nvrDll.CLIENT_DHPTZControlEx2(self.session, cha - 1, dcode, 0, 4, 0, bool(0), None)
-        print("PTZ 控制")
 
     # 云台控制停止
     def ptz_stop(self, cha):

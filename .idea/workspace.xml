@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf2f0ece-eebe-45cd-8e55-f7d1b4ccdd12" name="Default" comment="海康、大华基本播放完成&#10;&#10;1、基本实时播放&#10;2、增加依赖的Dll文件">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cf2f0ece-eebe-45cd-8e55-f7d1b4ccdd12" name="Default" comment="所有接口全部实现">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rec-client.py" beforeDir="false" afterPath="$PROJECT_DIR$/rec-client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/NvrBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/NvrBase.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video/NvrDH.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/NvrDH.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video/NvrHK.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/NvrHK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/RealPlayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/RealPlayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/VideoManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/VideoManager.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +21,7 @@
     <SUITE FILE_PATH="coverage/cefpython$rec_client__1_.coverage" NAME="rec-client Coverage Results" MODIFIED="1507618941047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rec_client$rec_client__1_.coverage" NAME="rec-client Coverage Results" MODIFIED="1507730507439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/rec_client$tutorial.coverage" NAME="tutorial Coverage Results" MODIFIED="1527518438531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
-    <SUITE FILE_PATH="coverage/rec_client$rec_client.coverage" NAME="rec-client Coverage Results" MODIFIED="1527670987923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/rec_client$rec_client.coverage" NAME="rec-client Coverage Results" MODIFIED="1527671823448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/cefpython$pyinstaller.coverage" NAME="pyinstaller Coverage Results" MODIFIED="1507260708699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyinstaller" />
     <SUITE FILE_PATH="coverage/rec_client$pyinstaller.coverage" NAME="pyinstaller Coverage Results" MODIFIED="1507732054025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyinstaller" />
   </component>
@@ -35,8 +30,8 @@
       <file leaf-file-name="VideoManager.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/video/VideoManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+            <state relative-caret-position="365">
+              <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -44,22 +39,17 @@
       <file leaf-file-name="NvrDH.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1915">
-              <caret line="115" column="28" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="28" />
+            <state relative-caret-position="1400">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NvrBase.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/video/NvrBase.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="NvrHK.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+            <state relative-caret-position="190">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
             </state>
           </provider>
         </entry>
@@ -76,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>realplay_v40</find>
       <find>mouse</find>
       <find>EVT_MOTION</find>
       <find>cef</find>
@@ -106,6 +95,7 @@
       <find>DWORD</find>
       <find>DH_PTZ_ZOOM_ADD_CONTROL</find>
       <find>DH_PTZ_POINT_MOVE_CONTROL</find>
+      <find>goptz</find>
     </findStrings>
     <replaceStrings>
       <replace>c_ubyte</replace>
@@ -134,10 +124,10 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/rec-client.py" />
         <option value="$PROJECT_DIR$/video/NvrBase.py" />
-        <option value="$PROJECT_DIR$/video/NvrHK.py" />
         <option value="$PROJECT_DIR$/video/RealPlayer.py" />
-        <option value="$PROJECT_DIR$/video/NvrDH.py" />
         <option value="$PROJECT_DIR$/video/VideoManager.py" />
+        <option value="$PROJECT_DIR$/video/NvrDH.py" />
+        <option value="$PROJECT_DIR$/video/NvrHK.py" />
       </list>
     </option>
   </component>
@@ -390,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527652985205</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="所有接口全部实现">
+      <created>1527671065946</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527671065946</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -402,9 +399,9 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32945737" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23255815" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23255815" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32816538" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22371244" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22371244" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -431,7 +428,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="海康、大华基本播放完成&#10;&#10;1、基本实时播放&#10;2、增加依赖的Dll文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="海康、大华基本播放完成&#10;&#10;1、基本实时播放&#10;2、增加依赖的Dll文件" />
+    <MESSAGE value="所有接口全部实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="所有接口全部实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -442,7 +440,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -710,27 +708,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1915">
-          <caret line="115" column="28" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/video/NvrBase.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/video/VideoManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
+        <state relative-caret-position="365">
+          <caret line="85" column="12" selection-start-line="85" selection-start-column="12" selection-end-line="85" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -146,4 +146,4 @@ class NvrHK(NvrBase):
 
     # PTZ 调用
     def goPtz(self, cha, ptz):
-        self.nvrDll.NET_DVR_PTZPreset_Other(self.session, cha, 39, ptz)
+        self.nvrDll.NET_DVR_PTZPreset_Other(self.session - 1, cha, 39, ptz)
