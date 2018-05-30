@@ -59,11 +59,14 @@ def main():
     # 读取配置
     envSetup()
     video.LoadDll()
+
+    # 读取配置文件
     cfg_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), "resources/config.json")
     f = open(cfg_file, encoding='utf-8')
     global cfg
     cfg = json.load(f)
     f.close()
+
     # 开始
     check_versions()
     sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
@@ -79,6 +82,11 @@ def main():
     del app  # Must destroy before calling Shutdown
     # On Mac shutdown is called in OnClose
     cef.Shutdown()
+
+
+'''
+检查版本
+'''
 
 
 def check_versions():
@@ -122,7 +130,6 @@ class MainFrame(wx.Frame):
         g_count_windows += 1
 
         self.setup_icon()
-        # self.create_menu()
         self.Bind(wx.EVT_CLOSE, self.OnClose)
 
         # Set wx.WANTS_CHARS style for the keyboard to work.
@@ -171,6 +178,7 @@ class MainFrame(wx.Frame):
 
     def OnClose(self, event):
         print("[rec-client.py] OnClose called")
+        self.javascriptExternal.clearUp()
         if not self.browser:
             # May already be closing, may be called multiple times on Mac
             return

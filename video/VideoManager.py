@@ -27,6 +27,10 @@ class VideoManager:
     def __del__(self):
         pass
 
+    def clearUp(self):
+        self.timer.Stop()
+        video.CleanDlls()
+
     # 定时执行函数，用于检测NVR的登录情况，每秒执行
     def on_timer(self, _):
         for k in self.nvrs:
@@ -63,11 +67,18 @@ class VideoManager:
     def realPlayInGrid(self, channel, no):
         print("网格播放：", channel, ":", no)
         if self.nvrs.__contains__(channel):
-            self.nvrs[channel].real_play(no)
+            if self.nvrs[channel].session > 0:
+                self.nvrs[channel].real_play(no)
 
     # 在窗体中进行播放
     def realPlayInForm(self, channel, no):
         self.realPlayInGrid(channel, no)
+
+    # 预置位调用
+    def goPtz(self, channel, no, ptz):
+        if self.nvrs.__contains__(channel):
+            if self.nvrs[channel].session > 0:
+                self.nvrs[channel].real_play(no, ptz)
 
     # 历史回放
     def playBack(self, channel, device, name):

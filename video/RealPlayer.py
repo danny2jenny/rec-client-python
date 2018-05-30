@@ -31,8 +31,12 @@ class RealPlayerForm(wx.Frame):
 
     # 构造函数
     def __init__(self, parent, title):
+
+        # 播放参数
         self.nvr = None
         self.session = -1
+        self.channel = -1
+
         wx.Frame.__init__(self, parent=parent, id=wx.ID_ANY, title=title, size=(600, 400))
         # 类变量
         self.ptzDir = PtzDir.DOWN
@@ -80,26 +84,20 @@ class RealPlayerForm(wx.Frame):
 
     # 鼠标滚轮事件
     def OnMouseWheel(self, e):
-
-        if e.WheelRotation > 0:
-            # 放大
-            pass
-        else:
-            # 缩小
-            pass
+        self.nvr.zoom(self.channel, e.WheelRotation)
 
     # 鼠标左键按下
     def OnMouseLeftDown(self, e):
-        print("Down")
+        self.nvr.ptz_start(self.channel, self.ptzDir)
         pass
 
     # 鼠标左键释放
     def OnMouseLeftUp(self, e):
-        print("Up")
+        self.nvr.ptz_stop(self.channel)
         pass
 
     # 窗体关闭
     def OnClose(self, e):
         print("Close...")
-        self.nvr.real_play_stop(self.session)
+        self.nvr.real_play_stop(self.channel)
         self.Destroy()

@@ -1,7 +1,7 @@
 from ctypes import *
 
 from video.NvrBase import NvrBase
-from video.RealPlayer import RealPlayerForm
+from video.RealPlayer import RealPlayerForm, PtzDir
 
 '''
 登录用的结构体
@@ -93,6 +93,7 @@ class NvrHK(NvrBase):
         playInfo = NetDvrPreviewInfo()
         playInfo.hPlayWnd = vf.GetHandle()
         playInfo.lChannel = cha
+        vf.channel = cha
         vf.session = 1 + self.nvrDll.NET_DVR_RealPlay_V40(self.session - 1, byref(playInfo), None, None)
 
     # 实时播放停止
@@ -100,13 +101,49 @@ class NvrHK(NvrBase):
         self.nvrDll.NET_DVR_StopRealPlay(session - 1)
 
     # 云台控制
-    def ptz_start(self, cha, direction, speed):
-        pass
+    def ptz_start(self, cha, direction):
+        dcode = 0
+        if direction == PtzDir.UP:
+            dcode = 21
+        elif direction == PtzDir.RIGHT:
+            dcode = 24
+        elif direction == PtzDir.DOWN:
+            dcode = 22
+        elif direction == PtzDir.LEFT:
+            dcode = 23
+        elif direction == PtzDir.UP_RIGHT:
+            dcode = 26
+        elif direction == PtzDir.DOWN_RIGHT:
+            dcode = 28
+        elif direction == PtzDir.DOWN_LEFT:
+            dcode = 27
+        elif direction == PtzDir.UP_LEFT:
+            dcode = 25
+
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, dcode, 0, 3)
 
     # 云台控制停止
     def ptz_stop(self, cha):
-        pass
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 21, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 22, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 23, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 24, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 25, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 26, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 27, 1, 1);
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 28, 1, 1);
 
     # 变焦
     def zoom(self, cha, direction):
-        pass
+
+        if direction > 0:
+            self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 11, 0, 7)
+        else:
+            self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 12, 0, 7)
+
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 11, 1, 7)
+        self.nvrDll.NET_DVR_PTZControlWithSpeed_Other(self.session - 1, cha, 12, 1, 7)
+
+    # PTZ 调用
+    def goPtz(self, cha, ptz):
+        self.nvrDll.NET_DVR_PTZPreset_Other(self.session, cha, 39, ptz)

@@ -28,7 +28,7 @@ class NvrBase:
         pass
 
     # 云台控制
-    def ptz_start(self, cha, direction, speed):
+    def ptz_start(self, cha, direction):
         pass
 
     # 云台控制停止
@@ -37,4 +37,8 @@ class NvrBase:
 
     # 变焦
     def zoom(self, cha, direction):
+        pass
+
+    # PTZ 调用
+    def goPtz(self, cha, ptz):
         pass
