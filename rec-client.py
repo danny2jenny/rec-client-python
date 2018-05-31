@@ -1,12 +1,3 @@
-# Example of embedding CEF Python browser using wxPython library.
-# This example has a top menu and a browser widget without navigation bar.
-
-# Tested configurations:
-# - wxPython 4.0 on Windows/Mac/Linux
-# - wxPython 3.0 on Windows/Mac
-# - wxPython 2.8 on Linux
-# - CEF Python v55.4+
-
 import wx
 from cefpython3 import cefpython as cef
 import platform
@@ -16,7 +7,6 @@ import json
 
 # Fix for PyCharm hints warnings when using static methods
 import video
-from video.RealPlayer import RealPlayerForm
 from video.VideoManager import VideoManager
 
 WindowUtils = cef.WindowUtils()
@@ -72,7 +62,7 @@ def main():
     check_versions()
     sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
     settings = {
-        # "RemoteDebuggingPort": 4444
+        "remote_debugging_port": 4444
     }
 
     # noinspection PyUnresolvedReferences, PyArgumentList
@@ -161,7 +151,7 @@ class MainFrame(wx.Frame):
 
         # JavaScript 回调注册
         bindings = cef.JavascriptBindings(bindToFrames=False, bindToPopups=False)
-        self.javascriptExternal = VideoManager(self)
+        self.javascriptExternal = VideoManager(self, cfg["url"])
         bindings.SetObject("videoPlayer", self.javascriptExternal)
         self.browser.SetJavascriptBindings(bindings)
 

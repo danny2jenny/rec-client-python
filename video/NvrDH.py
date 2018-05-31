@@ -46,6 +46,7 @@ class NvrDH(NvrBase):
             byref(loginfo),
             byref(err)
         )
+        return self.userSession
 
     # 实时播放
     def real_play(self, cha):

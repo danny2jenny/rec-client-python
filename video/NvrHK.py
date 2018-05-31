@@ -77,6 +77,7 @@ class NvrHK(NvrBase):
             c_char_p(self.nvrPass.encode('ascii')),
             byref(dvrInfo)
         )
+        return self.userSession
 
     # 实时播放
     def real_play(self, cha):

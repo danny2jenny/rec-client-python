@@ -5,6 +5,7 @@ nvrs 存放所有的NVR配置
 
 import json
 import threading
+import urllib
 
 import video
 
@@ -27,9 +28,10 @@ class ThreadTimer(threading.Thread):
 class VideoManager:
 
     # app 是一个wx.App 对象
-    def __init__(self, app):
+    def __init__(self, app, url):
 
         self.app = app  # wx App 对象
+        self.url = url + "/srv/video"
         self.nvrs = dict()  # nvr 列表
 
         # 实时播放窗口列表
@@ -48,16 +50,39 @@ class VideoManager:
     def __del__(self):
         pass
 
+    def httpPost(self, req):
+        data = {
+            'parm': req
+        }
+        data = urllib.parse.urlencode(data)
+        data = data.encode('ascii')
+        try:
+            urllib.request.urlopen(url=self.url, data=data)
+        except:
+            pass
+
     def clearUp(self):
         self.stopFlag.set()
         video.CleanDlls()
 
     # 定时执行函数，用于检测NVR的登录情况，每秒执行
     def on_timer(self):
+        req = {
+            'cmd': 21,
+            'channel': 0,
+            'online': 0
+        }
         for k in self.nvrs:
             nvr = self.nvrs[k]
             if nvr.userSession <= 0:
-                nvr.login()
+                req['channel'] = k
+                if nvr.login() <= 0:
+                    # 失败
+                    req['online'] = 0
+                else:
+                    # 成功
+                    req['online'] = 1
+                self.httpPost(json.dumps(req))
 
     # 初始化
     def initConfig(self, jsonStr):
