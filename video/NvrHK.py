@@ -82,12 +82,17 @@ class NvrHK(NvrBase):
     def real_play(self, cha):
         vf = RealPlayerForm(parent=self.wxApp, title="实时预览")
         vf.Show()
+
         vf.nvr = self
+        vf.channel = cha
+        vf.nvrId = self.nvrId
+        vf.mgr = self.mgr
         playInfo = NetDvrPreviewInfo()
         playInfo.hPlayWnd = vf.GetHandle()
         playInfo.lChannel = cha
-        vf.channel = cha
         vf.previewSession = 1 + self.nvrDll.NET_DVR_RealPlay_V40(self.userSession - 1, byref(playInfo), None, None)
+        # 添加到窗口列表
+        vf.AddToWindowList()
 
     # 实时播放停止
     def real_play_stop(self, previewSession):

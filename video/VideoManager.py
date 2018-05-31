@@ -32,6 +32,14 @@ class VideoManager:
         self.app = app  # wx App 对象
         self.nvrs = dict()  # nvr 列表
 
+        # 实时播放窗口列表
+        # key: "nvr+channel"
+        # val: 播放窗口
+        self.windows = dict()
+
+        # 告警视频窗口列表
+
+        # 建立一个线程定时器
         self.stopFlag = threading.Event()
         thread = ThreadTimer(self.stopFlag, self.on_timer)
         thread.start()
@@ -56,6 +64,9 @@ class VideoManager:
         # 首先清理Dlls
         video.CleanDlls()
 
+        # 清理NVR列表
+        self.nvrs.clear()
+
         # {'id': 2, 'name': '海康NVR', 'ip': '192.168.2.123', 'port': 8888, 'login': 'admin', 'pass': 'jennyzhan1', 'type': 2001, 'opt': ''}
         cfgs = json.loads(jsonStr)
 
@@ -65,6 +76,8 @@ class VideoManager:
             print(cfg)
             if vo is not None:
                 vo.wxApp = self.app
+                vo.mgr = self
+                vo.nvrId = cfg['id']
                 vo.nvrDll = video.GetNvrDll(cfg['type'])
                 vo.nvrName = cfg['name']
                 vo.nvrIp = cfg['ip']
@@ -80,9 +93,19 @@ class VideoManager:
     def realPlayInGrid(self, channel, no):
         if self.nvrs.__contains__(channel):
             if self.nvrs[channel].userSession > 0:
-                self.nvrs[channel].real_play(no)
+                # 播放
+                if self.windows.__len__() > 5:
+                    # 最多10个窗口
+                    return
+                else:
+                    key = str(channel) + ":" + str(no)
+                    if self.windows.__contains__(key):
+                        self.windows[key].Raise()
+                        pass
+                    else:
+                        self.nvrs[channel].real_play(no)
 
-    # 在窗体中进行播放
+    # 在窗体中进行播放，一般是告警
     def realPlayInForm(self, channel, no):
         self.realPlayInGrid(channel, no)
 

@@ -7,6 +7,8 @@ class NvrBase:
     # 初始化过程
     def __init__(self):
         self.wxApp = None
+        self.mgr = None
+        self.nvrId = 0
         self.nvrDll = None
         self.userSession = -1
         self.nvrName = None

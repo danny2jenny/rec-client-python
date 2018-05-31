@@ -34,6 +34,8 @@ class RealPlayerForm(wx.Frame):
 
         # 播放参数
         self.nvr = None
+        self.nvrId = 0
+        self.mgr = None
         self.previewSession = -1
         self.channel = -1
 
@@ -106,4 +108,14 @@ class RealPlayerForm(wx.Frame):
     # 窗体关闭
     def OnClose(self, e):
         self.nvr.real_play_stop(self.previewSession)
+        # todo 从列表中移除
+        key = str(self.nvrId) + ":" + str(self.channel)
+        self.mgr.windows.pop(key)
+        print(self.mgr.windows)
         self.Destroy()
+
+    # 添加到窗口列表
+    def AddToWindowList(self):
+        key = str(self.nvrId) + ":" + str(self.channel)
+        self.mgr.windows[key] = self
+        print(self.mgr.windows)
