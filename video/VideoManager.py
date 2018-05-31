@@ -46,10 +46,9 @@ class VideoManager:
 
     # 定时执行函数，用于检测NVR的登录情况，每秒执行
     def on_timer(self):
-        print("Timer ....")
         for k in self.nvrs:
             nvr = self.nvrs[k]
-            if nvr.session <= 0:
+            if nvr.userSession <= 0:
                 nvr.login()
 
     # 初始化
@@ -65,7 +64,7 @@ class VideoManager:
             vo = video.GreateVideoObj(cfg['type'])
             print(cfg)
             if vo is not None:
-                vo.app = self.app
+                vo.wxApp = self.app
                 vo.nvrDll = video.GetNvrDll(cfg['type'])
                 vo.nvrName = cfg['name']
                 vo.nvrIp = cfg['ip']
@@ -79,9 +78,8 @@ class VideoManager:
 
     # 在Gride中进行播放
     def realPlayInGrid(self, channel, no):
-        print("网格播放：", channel, ":", no)
         if self.nvrs.__contains__(channel):
-            if self.nvrs[channel].session > 0:
+            if self.nvrs[channel].userSession > 0:
                 self.nvrs[channel].real_play(no)
 
     # 在窗体中进行播放
@@ -91,7 +89,7 @@ class VideoManager:
     # 预置位调用
     def goPtz(self, channel, no, ptz):
         if self.nvrs.__contains__(channel):
-            if self.nvrs[channel].session > 0:
+            if self.nvrs[channel].userSession > 0:
                 self.nvrs[channel].real_play(no, ptz)
 
     # 历史回放

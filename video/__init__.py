@@ -6,6 +6,7 @@ from ctypes import WinDLL
 
 from video.NvrDH import NvrDH
 from video.NvrHK import NvrHK
+from video.NvrYS import NvrYS
 
 _vide_dll_ = dict()
 
@@ -15,6 +16,7 @@ def LoadDll():
     global _vide_dll_
     _vide_dll_[2001] = WinDLL('HCNetSDK.dll')
     _vide_dll_[2002] = WinDLL('dhnetsdk.dll')
+    _vide_dll_[2003] = WinDLL('NetDEVSDK.dll')
 
 
 # 返回 DLL 对象
@@ -31,6 +33,8 @@ def GreateVideoObj(id):
         return NvrHK()
     elif id == 2002:
         return NvrDH()
+    elif id == 2003:
+        return NvrYS()
     else:
         return None
 
@@ -42,6 +46,8 @@ def InitDlls():
             _vide_dll_[k].NET_DVR_Init()
         elif k == 2002:
             _vide_dll_[k].CLIENT_Init(None, None)
+        elif k == 2003:
+            _vide_dll_[k].NETDEV_Init()
 
 
 # 清理所有的DLL
@@ -51,3 +57,5 @@ def CleanDlls():
             _vide_dll_[k].NET_DVR_Cleanup()
         elif k == 2002:
             _vide_dll_[k].CLIENT_Cleanup()
+        elif k == 2003:
+            _vide_dll_[k].NETDEV_Cleanup()

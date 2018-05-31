@@ -34,7 +34,7 @@ class RealPlayerForm(wx.Frame):
 
         # 播放参数
         self.nvr = None
-        self.session = -1
+        self.previewSession = -1
         self.channel = -1
 
         wx.Frame.__init__(
@@ -105,6 +105,5 @@ class RealPlayerForm(wx.Frame):
 
     # 窗体关闭
     def OnClose(self, e):
-        print("Close...")
-        self.nvr.real_play_stop(self.channel)
+        self.nvr.real_play_stop(self.previewSession)
         self.Destroy()

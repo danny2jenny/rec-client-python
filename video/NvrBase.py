@@ -6,9 +6,9 @@ NVR 管理类，基类
 class NvrBase:
     # 初始化过程
     def __init__(self):
-        self.app = None
+        self.wxApp = None
         self.nvrDll = None
-        self.session = -1
+        self.userSession = -1
         self.nvrName = None
         self.nvrIp = None
         self.nvrPort = 0
@@ -24,7 +24,7 @@ class NvrBase:
         pass
 
     # 实时播放停止
-    def real_play_stop(self, session):
+    def real_play_stop(self, previewSession):
         pass
 
     # 云台控制
