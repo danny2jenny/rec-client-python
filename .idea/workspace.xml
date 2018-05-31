@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cf2f0ece-eebe-45cd-8e55-f7d1b4ccdd12" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rec-client.py" beforeDir="false" afterPath="$PROJECT_DIR$/rec-client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/NvrDH.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/NvrDH.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/NvrHK.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/NvrHK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/video/VideoManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/video/VideoManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/READMD.md" beforeDir="false" afterPath="$PROJECT_DIR$/READMD.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VideoManager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VideoManager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/VideoManager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            <state relative-caret-position="125">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
               <folding>
                 <element signature="e#33#44#0" expanded="true" />
               </folding>
@@ -44,11 +41,8 @@
       <file leaf-file-name="rec-client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rec-client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="153" column="63" selection-start-line="153" selection-start-column="63" selection-end-line="153" selection-end-column="63" />
-              <folding>
-                <element signature="e#1#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="3425">
+              <caret line="146" column="64" selection-start-line="146" selection-start-column="64" selection-end-line="146" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -56,7 +50,7 @@
       <file leaf-file-name="NvrHK.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
+            <state relative-caret-position="1900">
               <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="31" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -68,8 +62,17 @@
       <file leaf-file-name="NvrDH.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
+            <state relative-caret-position="25">
               <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="READMD.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/READMD.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="8" column="149" selection-start-line="8" selection-start-column="149" selection-end-line="8" selection-end-column="149" />
             </state>
           </provider>
         </entry>
@@ -150,6 +153,7 @@
         <option value="$PROJECT_DIR$/video/NvrDH.py" />
         <option value="$PROJECT_DIR$/rec-client.py" />
         <option value="$PROJECT_DIR$/video/VideoManager.py" />
+        <option value="$PROJECT_DIR$/READMD.md" />
       </list>
     </option>
   </component>
@@ -173,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,6 +198,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,25 +442,32 @@
       <option name="project" value="LOCAL" />
       <updated>1527740367150</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="通过HTTP发送给服务器NVR在线的消息">
+      <created>1527772124962</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1527772124962</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="936" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005365" side_tool="true" weight="0.23255815" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32945737" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" visible="true" weight="0.35917312" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" weight="0.35917312" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32816538" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2333691" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23658799" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="9" weight="0.32945737" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31653747" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -468,6 +479,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32816538" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="9" weight="0.32945737" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,7 +496,8 @@
     <MESSAGE value="以前NVR的session 改名成 userSession，&#10;实时播放的Session改名成 previewSession" />
     <MESSAGE value="消除PTZ调用的Bug" />
     <MESSAGE value="限制窗口最多6个，&#10;&#10;重复窗口不能打开" />
-    <option name="LAST_COMMIT_MESSAGE" value="限制窗口最多6个，&#10;&#10;重复窗口不能打开" />
+    <MESSAGE value="通过HTTP发送给服务器NVR在线的消息" />
+    <option name="LAST_COMMIT_MESSAGE" value="通过HTTP发送给服务器NVR在线的消息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,13 +616,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/turori.py" />
     <entry file="file://$PROJECT_DIR$/example/tutorial.py" />
-    <entry file="file://$PROJECT_DIR$/READMD.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/DevTool/Python36/Lib/platform.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -716,9 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding>
-            <element signature="e#24#49#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -767,33 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rec-client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="153" column="63" selection-start-line="153" selection-start-column="63" selection-end-line="153" selection-end-column="63" />
-          <folding>
-            <element signature="e#1#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -803,11 +779,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/video/VideoManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="125">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding>
             <element signature="e#33#44#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rec-client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3425">
+          <caret line="146" column="64" selection-start-line="146" selection-start-column="64" selection-end-line="146" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/NvrHK.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1900">
+          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/video/NvrDH.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/READMD.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="149" selection-start-line="8" selection-start-column="149" selection-end-line="8" selection-end-column="149" />
         </state>
       </provider>
     </entry>
