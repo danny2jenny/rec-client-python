@@ -90,7 +90,7 @@ class VideoManager:
     def goPtz(self, channel, no, ptz):
         if self.nvrs.__contains__(channel):
             if self.nvrs[channel].userSession > 0:
-                self.nvrs[channel].real_play(no, ptz)
+                self.nvrs[channel].goPtz(no, ptz)
 
     # 历史回放
     def playBack(self, channel, device, name):
