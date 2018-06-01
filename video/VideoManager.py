@@ -34,6 +34,9 @@ class VideoManager:
         self.url = url + "/srv/video"
         self.nvrs = dict()  # nvr 列表
 
+        # js 回调函数
+        self.jsCallHandle = None
+
         # 实时播放窗口列表
         # key: "nvr+channel"
         # val: 播放窗口
@@ -143,3 +146,7 @@ class VideoManager:
     # 历史回放
     def playBack(self, channel, device, name):
         print("历史回放，未实现！")
+
+    # 设置回调Js
+    def setJsFunc(self, jsCallHandle):
+        self.jsCallHandle = jsCallHandle
