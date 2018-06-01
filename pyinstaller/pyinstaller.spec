@@ -69,14 +69,14 @@ exe = EXE(pyz,
           )
 
 resource = Tree('../resources', prefix='resources')
-#config = [ ( '../config.json', '') ]
+plugin = Tree('../plugin', prefix='plugin')
 
 COLLECT(exe,
         a.binaries,
         a.zipfiles,
         a.datas,
         resource,
-#        config,
+		plugin,
         strip=False,
         upx=False,
-        name="cefapp")
+        name="rec-client")

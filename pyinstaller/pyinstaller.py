@@ -58,7 +58,7 @@ def main():
 
     # Make sure everything went fine
     curdir = os.path.dirname(os.path.abspath(__file__))
-    cefapp_dir = os.path.join(curdir, "dist", "cefapp")
+    cefapp_dir = os.path.join(curdir, "dist", "rec-client")
     executable = os.path.join(cefapp_dir, "rec-client" + EXE_EXT)
     if not os.path.exists(executable):
         print("Error: PyInstaller failed, main executable is missing: %s"
