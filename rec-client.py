@@ -38,8 +38,6 @@ def envSetup():
         if os.path.isdir(baseDir + "\\plugin\\" + file):
             os.environ['PATH'] = baseDir + "\\plugin\\" + file + ';' + os.environ['PATH']
 
-    # print("搜索路径：", os.environ['PATH'])
-
 
 '''
 主函数

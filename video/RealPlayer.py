@@ -111,11 +111,9 @@ class RealPlayerForm(wx.Frame):
         # todo 从列表中移除
         key = str(self.nvrId) + ":" + str(self.channel)
         self.mgr.windows.pop(key)
-        print(self.mgr.windows)
         self.Destroy()
 
     # 添加到窗口列表
     def AddToWindowList(self):
         key = str(self.nvrId) + ":" + str(self.channel)
         self.mgr.windows[key] = self
-        print(self.mgr.windows)
