@@ -71,7 +71,7 @@ class VideoManager:
     # 定时执行函数，用于检测NVR的登录情况，每秒执行
     def on_timer(self):
         req = {
-            'cmd': 21,
+            'cmd': 1,
             'channel': 0,
             'online': 0
         }
@@ -85,7 +85,8 @@ class VideoManager:
                 else:
                     # 成功
                     req['online'] = 1
-                self.httpPost(json.dumps(req))
+                if self.jsCallHandle != None:
+                    self.jsCallHandle.Call(req)
 
     # 初始化
     def initConfig(self, jsonStr):
