@@ -104,7 +104,7 @@ class MainFrame(wx.Frame):
             # still not yet available, so must delay embedding browser
             # (Issue #349).
             if wx.version().startswith("3.") or wx.version().startswith("4."):
-                wx.CallLater(100, self.embed_browser)
+                wx.CallLater(1000, self.embed_browser)
             else:
                 # This works fine in wxPython 2.8 on Linux
                 self.embed_browser()
@@ -135,7 +135,7 @@ class MainFrame(wx.Frame):
         window_info.SetAsChild(self.browser_panel.GetHandle(),
                                [0, 0, width, height])
         self.browser = cef.CreateBrowserSync(window_info,
-                                             url="https://www.google.com/")
+                                             url="http://www.baidu.com/")
         self.browser.SetClientHandler(FocusHandler())
 
     def OnSetFocus(self, _):
