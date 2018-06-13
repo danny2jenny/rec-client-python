@@ -21,7 +21,7 @@ class ThreadTimer(threading.Thread):
         self.func = func
 
     def run(self):
-        while not self.stopped.wait(1):
+        while not self.stopped.wait(2):
             self.func()
 
 
@@ -85,8 +85,12 @@ class VideoManager:
                 else:
                     # 成功
                     req['online'] = 1
-                if self.jsCallHandle != None:
-                    self.jsCallHandle.Call(req)
+            else:
+                req['online'] = 1
+            # 向客户端通知
+            if self.jsCallHandle != None:
+                self.jsCallHandle.Call(req)
+
 
     # 初始化
     def initConfig(self, jsonStr):
