@@ -53,6 +53,7 @@ class VideoManager:
     def __del__(self):
         pass
 
+    # 这个函数没有用
     def httpPost(self, req):
         data = {
             'parm': req
@@ -77,8 +78,8 @@ class VideoManager:
         }
         for k in self.nvrs:
             nvr = self.nvrs[k]
+            req['channel'] = k
             if nvr.userSession <= 0:
-                req['channel'] = k
                 if nvr.login() <= 0:
                     # 失败
                     req['online'] = 0

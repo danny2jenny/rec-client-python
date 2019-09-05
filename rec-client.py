@@ -45,9 +45,9 @@ def envSetup():
 
 
 def main():
-    # 读取配置
-    envSetup()
-    video.LoadDll()
+
+    envSetup()              # 设置DLL搜索路径
+    video.LoadDll()         # 加载视频的DLL
 
     # 读取配置文件
     cfg_file = os.path.join(os.path.abspath(os.path.dirname(__file__)), "resources/config.json")
@@ -60,7 +60,7 @@ def main():
     check_versions()
     sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
     settings = {
-        "remote_debugging_port": 4444
+        "remote_debugging_port": 4444       # 远程调试端口
     }
 
     # noinspection PyUnresolvedReferences, PyArgumentList

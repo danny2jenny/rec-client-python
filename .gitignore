@@ -3,3 +3,4 @@ error.log
 /pyinstaller/__pycache__
 /pyinstaller/build
 /pyinstaller/dist
+/venv
